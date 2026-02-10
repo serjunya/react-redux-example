@@ -1,12 +1,13 @@
-# React + Redux учебный проект
+# React + Redux + TypeScript учебный проект (FSD)
 
-Небольшое приложение **"Планировщик задач"**, чтобы понять базовый рабочий процесс React + Redux Toolkit.
+Небольшое приложение **"Планировщик задач"**, чтобы понять базовый рабочий процесс React + Redux Toolkit с архитектурой **Feature-Sliced Design (FSD)**.
 
-## Что внутри
+## Стек
 
 - React 19
 - Redux Toolkit + React Redux
-- Vite для запуска и сборки
+- TypeScript (strict)
+- Vite
 
 ## Быстрый старт
 
@@ -17,11 +18,20 @@ npm run dev
 
 После запуска открой `http://localhost:5173`.
 
-## Где смотреть Redux-часть
+## Структура проекта (FSD)
 
-- Store: `src/store/store.js`
-- Slice (actions + reducer + selectors): `src/features/tasks/tasksSlice.js`
-- Использование в компонентах: `src/components/*` и `src/App.jsx`
+- `src/app` — инициализация приложения, провайдеры, store, глобальные стили.
+- `src/pages` — страницы приложения.
+- `src/widgets` — крупные UI-блоки (композиция features/entities).
+- `src/features` — пользовательские сценарии (добавление задач, фильтры, список).
+- `src/entities` — бизнес-сущности (task: model + ui).
+- `src/shared` — общие типы.
+
+## Где смотреть Redux
+
+- Store: `src/app/store/store.ts`
+- Slice/actions/selectors: `src/entities/task/model/tasksSlice.ts`
+- Typed hooks: `src/app/store/hooks.ts`
 
 ## Ключевая идея
 
